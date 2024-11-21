@@ -3,11 +3,14 @@ import { CiSearch } from "react-icons/ci";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 
+
+
+
 const Body = () => {
   // State Variable - useState Hook is used to create a state variable to store data and a function to update it.
   let [restaurantList, setRestaurantList] = useState(resList);
   let [showButton, setShowButton] = useState(true);
-
+  
   // Function to update the restaurant list based on the rating.
   const filterRestaurantList = () => {  
     const filteredRestaurant = restaurantList.filter(
@@ -17,7 +20,7 @@ const Body = () => {
     setRestaurantList(filteredRestaurant);
     setShowButton(false);
   };
-
+         
   return (
     <div className="body">
       <div className="search-box">
@@ -49,4 +52,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+ export default Body;

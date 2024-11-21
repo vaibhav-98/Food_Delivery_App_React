@@ -15,33 +15,49 @@ const RestaurantCard = (props) => {
   } = restaurantData?.info;
 
   return (
-    <div className="restaurant-card">
+    <div className="restaurant-card" style={{ backgroundColor: "#f0f0f0"}}>
       <img
-        src={CDN_URL + cloudinaryImageId}
-        alt={name}
-        className="restaurant-logo"
+      src={CDN_URL + cloudinaryImageId}
+            //  alt={name}
+             className="restaurant-logo" 
       />
-      <div className="restaurant-details">
-        <h3 className="restaurant-name">
-          {name.slice(0, 22)}
-          {name.length > 22 ? "..." : ""}
-        </h3>
-        <div className="esa-rating">
-          <h4 className="rating">
-            <MdStarRate className="rating-logo" />
-            <span>{avgRating}</span>
-          </h4>
-          <h4>{costForTwo}</h4>
-          <h4>{deliveryTime} mins</h4>
-        </div>
-        <p className="cousine">
-          {cuisines.join(", ").slice(0, 30)}
-          {cuisines.join(", ").length > 30 ? "..." : ""}
-        </p>
-        <p className="location">{areaName}</p>
-      </div>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating}</h4>
+      <h4>{costForTwo / 100}FOR TWO</h4>
+      <h4>{deliveryTime} minutes</h4>
+
     </div>
-  );
+  )
+
+  // return (
+  //   <div className="restaurant-card">
+  //     <img
+  //       src={CDN_URL + cloudinaryImageId}
+  //       alt={name}
+  //       className="restaurant-logo"
+  //     />
+  //     <div className="restaurant-details">
+  //       <h3 className="restaurant-name">
+  //         {name.slice(0, 22)}
+  //         {name.length > 22 ? "..." : ""}
+  //       </h3>
+  //       <div className="esa-rating">
+  //         <h4 className="rating">
+  //           <MdStarRate className="rating-logo" />
+  //           <span>{avgRating}</span>
+  //         </h4>
+  //         <h4>{costForTwo}</h4>
+  //         <h4>{deliveryTime} mins</h4>
+  //       </div>
+  //       <p className="cousine">
+  //         {cuisines.join(", ").slice(0, 30)}
+  //         {cuisines.join(", ").length > 30 ? "..." : ""}
+  //       </p>
+  //       <p className="location">{areaName}</p>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default RestaurantCard;
